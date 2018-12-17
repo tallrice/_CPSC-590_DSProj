@@ -1,0 +1,100 @@
+#searchInput {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#elementID {
+    color: #fff;
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 1.5em;
+}
+.divider{
+    /* width:5px; */
+    /* height:auto; */
+    /* display:inline-block; */
+    /* margin-left;5px; */
+}
+.g {
+    color: green;
+}
+.r {
+    color: red;
+}
+.fa {
+    /* margin: 15px; */
+    /* padding: 15px; */
+    /* border: 15px; */
+}
+/* #thumbs { */
+/*     /1* margin-right: 5px; *1/ */
+/*     padding: 5px; */
+/*     margin-left: 5px; */
+/* } */
+#SearchItemsContainer {
+  /* background-position: 10px 10px; */
+  /* background-repeat: no-repeat; */
+  width: 95%;
+  /* font-size: 16px; */
+  /* padding: 12px 20px 12px 40px; */
+  /* border: 1px solid #ddd; */
+  /* margin-bottom: 12px; */
+  /* margin-top: -10px; */
+}
+/* #fragLikes, #fragDislikes { */
+/*   float: left; */
+/*   width: 50%; */
+/*   padding: 5px; */
+/* } */
+/* @media screen and (max-width: 500px) { */
+/*   #fragLikes #fragDislikes { */
+/*     width: 100%; */
+/*   } */
+/* } */
+/* #fragLikesHead, #fragDislikesHead { */
+/*   float: left; */
+/*   width: 50%; */
+/*   padding: 5px; */
+/* } */
+/* @media screen and (max-width: 500px) { */
+/*   #fragLikesHead #fragDislikesHead { */
+/*     width: 100%; */
+/*   } */
+/* } */
+h2 {
+  /* font-size: 20px; */
+  text-align: center;
+}
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
+th {
+  font-size: 18px;
+}
+#searchBar {
+  width: 100%;
+}
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}

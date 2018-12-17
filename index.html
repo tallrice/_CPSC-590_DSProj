@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="scripts/papaparse.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Fragrance Discovery</title>
+</head>
+
+<body>
+  <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+    <a class='navbar-brand' href='#'>Fragrance Discovery</a>
+    <!-- <a href="https://www.themoviedb.org/" target="_blank"> -->
+    <!--   <img src="https://www.themoviedb.org/assets/1/v4/logos/408x161-powered-by-rectangle-green-bb4301c10ddc749b4e79463811a68afebeae66ef43d17bcfd8ff0e60ded7ce99.png" height=40px> -->
+    </a>
+    <button class='navbar-toggler' type='button'
+            data-toggle='collapse'
+            data-target='#navbarSupportedContent'
+            aria-controls='navbarSupportedContent'
+            aria-expanded='false'
+            aria-label='Toggle navigation'>
+      <span class='navbar-toggler-icon'></span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+      <div class='navbar-nav'>
+        <a class='nav-item active nav-link' href='#'>Search</a>
+        <a class='nav-item nav-link' href='details.html'>Details</a>
+      </div>
+    </div>
+  </nav>
+  <main role="main" class="container-fluid">
+    <br>
+    <h1>Search:</h1>
+    <br>
+    <div class="container-fluid" id="SearchBox">
+      <input type="text" id="searchInput" placeholder="Search for fragrances or notes.." title="Type in a name">
+    </div>
+      <div w3-include-html="f_table.html"></div>
+    </table>
+    <div class="container-fluid" id="SearchItemsContainer">
+        <div class="row">
+            <div class="col-xs-12" style="font-size:24px" id="SearchItems">
+            </div>
+        </div>
+    </div>
+    <div class="error"></div>
+    <br>
+
+    <div class="container-fluid">
+      <h2>Fragrance Preferences</h2>
+      <div class="row">
+        <div class="col-sm-6" id="fragLikes">
+          <h3 id="fragLikesHead">Likes</h3>
+          <table class="table table-hover table-bordered" id="fragLikesTable">
+            <thead class="thead-light" id="fragHead">
+              <th style="width: 40%">Brand</th>
+              <th style="width: 40%">Name</th>
+              <th style="width: 20%">Remove</th>
+            </thead>
+            <tbody id="t-body">
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-6" id="fragDislikes">
+        <!-- <div class="container" id="fragDislikes"> -->
+          <h3 id="fragDislikesHead">Dislikes</h3>
+          <table class="table table-hover table-bordered" id="fragDislikesTable">
+            <thead class="thead-light">
+              <th style="width: 40%">Brand</th>
+              <th style="width: 40%">Name</th>
+              <th style="width: 20%">Remove</th>
+            </thead>
+            <tbody id="t-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+      <h2>Note Preferences</h2>
+      <div class="row">
+        <div class="col-sm-6" id="noteLikes">
+          <h3 id="noteLikesHead">Likes</h3>
+          <table class="table table-hover table-bordered" id="noteLikesTable">
+            <thead class="thead-light" id="noteHead">
+              <th style="width: 80%">Name</th>
+              <th style="width: 20%">Remove</th>
+            </thead>
+            <tbody id="t-body">
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-6" id="noteDislikes">
+        <!-- <div class="container" id="noteDislikes"> -->
+          <h3 id="noteDislikesHead">Dislikes</h3>
+          <table class="table table-hover table-bordered" id="noteDislikesTable">
+            <thead class="thead-light">
+              <th style="width: 80%">Name</th>
+              <th style="width: 20%">Remove</th>
+            </thead>
+            <tbody id="t-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <br>
+    <div class="container-fluid" id="Recs">
+      <h2>Recommendations</h2>
+      <table class="table table-hover table-bordered table-light" id="rec1Table">
+        <thead class="thead-light">
+          <th style="width: 50%">Fragrance</th>
+          <th style="width: 30%">Similarity</th>
+          <th style="width: 10%">Basenotes</th>
+          <th style="width: 10%">Fragrantica</th>
+        </thead>
+        <tbody class="table-warning" id="t-body-1">
+        </tbody>
+        <tbody class="table-info" id="t-body-2">
+        </tbody>
+        <tbody class="table-primary" id="t-body-3">
+        </tbody>
+      </table>
+      <table class="table table-hover table-bordered" id="rec2Table">
+        <button type="button" class="btn btn-success" onclick="getRecs(4)" style="width: 100%">Collaborative Filtering</button>
+        <tbody class="table-success" id="t-body-4">
+        </tbody>
+      </table>
+    </div>
+<!-- <img src="https://www.themoviedb.org/assets/1/v4/logos/408x161-powered-by-rectangle-green-bb4301c10ddc749b4e79463811a68afebeae66ef43d17bcfd8ff0e60ded7ce99.png"> -->
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+  <script src="scripts/index.js"></script>
+
+</body>
+
+</html>
